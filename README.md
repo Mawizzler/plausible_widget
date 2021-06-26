@@ -8,7 +8,7 @@ There are 2 options to install this widget. For both options, make sure to downl
 
 1. Install with ScriptDude
 
-[![Download with ScriptDude](https://scriptdu.de/download.svg)](https://scriptdu.de/?name=Plausible Analytics Widgets&source=https%3A%2F%2Fraw.githubusercontent.com%2FMawizzler%2Fplausible_widget%2Fmain%2Fwidget.js&docs=https%3A%2F%2Fgithub.com%2FMawizzler%2Fplausible_widget%2Fblob%2Fmain%2FREADME.md#generator)
+[![Download with ScriptDude](https://scriptdu.de/download.svg)](https://scriptdu.de/?name=Plausible%20Analytics%20Widgets&source=https%3A%2F%2Fraw.githubusercontent.com%2FMawizzler%2Fplausible_widget%2Fmain%2Fwidget.js&docs=https%3A%2F%2Fgithub.com%2FMawizzler%2Fplausible_widget%2Fblob%2Fmain%2FREADME.md#generator)
 
 2. Manual Installation
 
