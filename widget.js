@@ -1,5 +1,5 @@
-const plausibleSite = ""
-const bearerToken = ""
+const PLAUSIBLE_SITE = ""
+const API_KEY = ""
 
 const ACCENT_COLOR = "rgba(106, 121, 207,1.0)"
 const ACCENT_COLOR_HIDDEN = "rgba(106, 121, 207,0.3)"
@@ -23,8 +23,8 @@ if(POSSIBLE_PERIODS.includes(TIME_RANGE)){
 }
 
 try{
-  const stats = new Request("https://plausible.io/api/v1/stats/aggregate?site_id="+plausibleSite+"&period="+period+"&metrics=visitors,pageviews,bounce_rate,visit_duration&compare=previous_period")
-    stats.headers = {'Authorization':'Bearer '+bearerToken}
+  const stats = new Request("https://plausible.io/api/v1/stats/aggregate?site_id="+PLAUSIBLE_SITE+"&period="+period+"&metrics=visitors,pageviews,bounce_rate,visit_duration&compare=previous_period")
+    stats.headers = {'Authorization':'Bearer '+API_KEY}
   const statsResult = await stats.loadJSON()
 
   if (config.runsInWidget) {
@@ -112,7 +112,7 @@ async function setLargeData(widget,statsResult,period){
     globeImage.tintColor = TEXT_COLOR
     titleStack.addSpacer(3)
     
-    const siteTitle = titleStack.addText(plausibleSite)
+    const siteTitle = titleStack.addText(PLAUSIBLE_SITE)
     siteTitle.font = Font.semiboldRoundedSystemFont(12)
     siteTitle.textColor = TEXT_COLOR
     
@@ -168,7 +168,7 @@ async function setSmallData(widget,statsResult,period){
     globeImage.tintColor = TEXT_COLOR
     titleStack.addSpacer(3)
     
-    const siteTitle = titleStack.addText(plausibleSite)
+    const siteTitle = titleStack.addText(PLAUSIBLE_SITE)
     siteTitle.font = Font.semiboldRoundedSystemFont(11)
     siteTitle.textColor = TEXT_COLOR
     
@@ -270,7 +270,7 @@ async function setMediumData(widget,statsResult,period){
     globeImage.tintColor = TEXT_COLOR
     titleStack.addSpacer(3)
     
-    const siteTitle = titleStack.addText(plausibleSite)
+    const siteTitle = titleStack.addText(PLAUSIBLE_SITE)
     siteTitle.font = Font.semiboldRoundedSystemFont(11)
     siteTitle.textColor = TEXT_COLOR
     
@@ -356,9 +356,9 @@ async function createDetailCol(row,title,value,diff,small = false,reversed = fal
 }
 
 async function getChartImage(period,hideDetails = false,square = false){
-    const history = new Request("https://plausible.io/api/v1/stats/timeseries?site_id="+plausibleSite+"&period="+period)
+    const history = new Request("https://plausible.io/api/v1/stats/timeseries?site_id="+PLAUSIBLE_SITE+"&period="+period)
     
-    history.headers = {'Authorization':'Bearer '+bearerToken}
+    history.headers = {'Authorization':'Bearer '+API_KEY}
       
     const historyResult = await history.loadJSON()
     const historyArray = historyResult.results
